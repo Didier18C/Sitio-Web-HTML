@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 7 - Script Creativo (Modo Oscuro)</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <h1>Actividad 7: Diseño y Lógica Creativa</h1>
+</header>
+
+<div class="tarjeta" id="miTarjeta">
+    <h2>Configuración Visual</h2>
+    <p>Utiliza el botón para alternar entre el tema claro y el tema oscuro.</p>
+    <button id="cambiarTema">Activar Modo Oscuro</button>
+    <p><small id="estado">Estado actual: Tema Claro</small></p>
+</div>
+
+<script>
+
+    // SCRIPT CREATIVO CON LÓGICA DE TOGGLE
+    const boton = document.getElementById('cambiarTema');
+    const cuerpo = document.body;
+    const tarjeta = document.getElementById('miTarjeta');
+    const estadoTexto = document.getElementById('estado');
+
+    /**
+     * Función con Algoritmo de Alternancia
+     * Utiliza la manipulación de clases para cambiar el tema de la interfaz.
+     */
+    function alternarModoOscuro() {
+        // Alterna el modo
+        cuerpo.classList.toggle('modo-oscuro');
+
+        // Actualizar el texto del botón según el modo
+        if (cuerpo.classList.contains('modo-oscuro')) {
+            // Si el modo oscuro está activo:
+            boton.textContent = 'Desactivar Modo Oscuro';
+            estadoTexto.textContent = 'Estado actual: Tema Oscuro 🌙';
+        } else {
+            // Si el modo claro está activo:
+            boton.textContent = 'Activar Modo Oscuro';
+            estadoTexto.textContent = 'Estado actual: Tema Claro ☀️';
+        }
+    }
+    // Asignación del Script
+    boton.addEventListener('click', alternarModoOscuro);
+</script>
+
+</body>
+</html>
